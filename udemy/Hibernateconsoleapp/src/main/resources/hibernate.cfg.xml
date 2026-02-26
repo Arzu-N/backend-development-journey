@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- =======================
+             Database Connection Settings
+             ======================= -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/education</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">Uzraarzu12.</property>
+        <!-- Dialect (DB tipinə uyğun) -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- =======================
+           C3P0 Connection Pool Settings
+           ======================= -->
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        <property name="hibernate.c3p0.timeout">300</property>
+        <property name="hibernate.c3p0.max_statements">50</property>
+        <property name="hibernate.c3p0.idle_test_period">3000</property>
+        <!-- Hibernate-in SQL logunu göstərməsi -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <mapping class="org.example.Student"/>
+<!--         Hər dəfə tətbiq işə düşəndə cədvəlləri avtomatik yarat / yenilə-->
+<!--        <property name="hibernate.hbm2ddl.auto"></property>-->
+
+        <!-- Entity class-larını qeyd et -->
+    </session-factory>
+</hibernate-configuration>

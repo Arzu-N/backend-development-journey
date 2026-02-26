@@ -1,0 +1,17 @@
+# Java
+*.class
+*.log
+*.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Maven / Gradle
+target/
+build/
+.gradle/
+
+# JDK
+ms-*/

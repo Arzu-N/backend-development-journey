@@ -1,0 +1,283 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > Customstudentrepo</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.education.repo</a>
+</div>
+
+<h1>Coverage Summary for Class: Customstudentrepo (com.example.education.repo)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Customstudentrepo</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/18)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/46)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.education.repo;
+&nbsp;import com.example.education.entity.Student;
+&nbsp;import jakarta.persistence.EntityManager;
+&nbsp;import jakarta.persistence.TypedQuery;
+&nbsp;import jakarta.persistence.criteria.CriteriaBuilder;
+&nbsp;import jakarta.persistence.criteria.CriteriaQuery;
+&nbsp;import jakarta.persistence.criteria.Predicate;
+&nbsp;import jakarta.persistence.criteria.Root;
+&nbsp;import org.springframework.stereotype.Repository;
+&nbsp;import org.springframework.transaction.annotation.Transactional;
+&nbsp;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;/*public class Studentrepo implements Istudentrepo {
+&nbsp;   private final EntityManager em;
+&nbsp;   public Studentrepo(EntityManager em) {
+&nbsp;       this.em = em;
+&nbsp;   }
+&nbsp;    public  List&lt;Student&gt; getlist() {
+&nbsp;        List &lt;Student&gt;resultList = em.createNativeQuery(&quot;select * from student&quot;, Student.class).getResultList();
+&nbsp;        return resultList;
+&nbsp;    }
+&nbsp;    public void insert(Student obj) {
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    public void update(Student obj) {
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    public void delete(Integer id) {
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    public Student findbiyid(int id) {
+&nbsp;return null;
+&nbsp;    }
+&nbsp;  public List&lt;Student&gt;getlist(String name,String surname,String email,Integer age,String university,String password){
+&nbsp;        return null;
+&nbsp;       }}*/
+&nbsp;/*
+&nbsp;@Repository
+&nbsp;public class Studentrepo implements Istudentrepo{
+&nbsp;    @Autowired     //field injection
+&nbsp;    private  EntityManager em;
+&nbsp;  /*  public Studentrepo setEm(EntityManager em) { setter injectio
+&nbsp;        this.em = em;
+&nbsp;        return this;
+&nbsp;    }*/
+&nbsp;/*
+&nbsp;    public  List&lt;Student&gt; getlist() {
+&nbsp;        List &lt;Student&gt;resultList = em.createQuery(&quot;select s from Mystudent s&quot;,Student.class).getResultList();
+&nbsp;        return resultList;
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void insert(Student obj) {
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void update(Student obj) {
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void delete(Integer id) {
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public Student findbiyid(int id) {
+&nbsp;        return null;
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public List&lt;Student&gt; getlist(String name, String surname, String email, Integer age, String university, String password) {
+&nbsp;        return List.of();
+&nbsp;    }
+&nbsp;*/
+&nbsp;@Repository
+&nbsp;public class Customstudentrepo implements Istudentrepo{
+&nbsp;   private final EntityManager em;
+<b class="nc">&nbsp;   public Customstudentrepo(EntityManager em) {</b>
+<b class="nc">&nbsp;       this.em = em;</b>
+&nbsp;   }
+&nbsp;   @Override
+&nbsp;    public  List&lt;Student&gt; getlist() {
+<b class="nc">&nbsp;        List &lt;Student&gt;resultList = em.createQuery(&quot;select s from Mystudent s&quot;,Student.class).getResultList();</b>
+<b class="nc">&nbsp;        return resultList;</b>
+&nbsp;    }
+&nbsp;    @Override
+&nbsp;@Transactional(timeout=3000,readOnly=true)
+&nbsp;    public void insert(Student obj) {
+<b class="nc">&nbsp;em.persist(obj);</b>
+&nbsp;// tx,orm,jdbc  library
+&nbsp;    }
+&nbsp;    @Override
+&nbsp;    public void update(Student obj) {
+&nbsp;
+<b class="nc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    @Override
+&nbsp;    @Transactional
+&nbsp;    public void deleteById(Integer id) {
+<b class="nc">&nbsp;              final Student s = em.find(Student.class, id);</b>
+<b class="nc">&nbsp;              if(s!=null){</b>
+<b class="nc">&nbsp;        em.remove(s);}</b>
+&nbsp;           }
+&nbsp;    @Override
+&nbsp;    public Student findbiyid(int id) {
+<b class="nc">&nbsp;        return null;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public List&lt;Student&gt; getlist(String name, String surname, String email, Integer age, Integer universityid) {
+<b class="nc">&nbsp;        CriteriaBuilder cb = em.getCriteriaBuilder();</b>
+<b class="nc">&nbsp;        CriteriaQuery&lt;Student&gt; cq = cb.createQuery(Student.class);</b>
+<b class="nc">&nbsp;        Root&lt;Student&gt; root = cq.from(Student.class);</b>
+<b class="nc">&nbsp;        List&lt;Predicate&gt;predicates=new ArrayList&lt;&gt;();</b>
+<b class="nc">&nbsp;        if(name!=null&amp;&amp;!(name.isEmpty())){</b>
+<b class="nc">&nbsp;            predicates.add(cb.like(root.get(&quot;name&quot;),&quot;%&quot;+name+&quot;%&quot;));</b>
+&nbsp;        }
+<b class="nc">&nbsp;        if(surname!=null&amp;&amp;!(surname.isEmpty())){</b>
+<b class="nc">&nbsp;            predicates.add(cb.like(root.get(&quot;surname&quot;),&quot;%&quot;+surname+&quot;%&quot;));</b>
+&nbsp;        }
+<b class="nc">&nbsp;        if(email!=null&amp;&amp;!(email.isEmpty())){</b>
+<b class="nc">&nbsp;            predicates.add(cb.like(root.get(&quot;email&quot;),&quot;%&quot;+email+&quot;%&quot;));</b>
+&nbsp;        }
+<b class="nc">&nbsp;        if(age!=null){</b>
+<b class="nc">&nbsp;            predicates.add(cb.equal(root.get(&quot;age&quot;),age));</b>
+&nbsp;        }
+<b class="nc">&nbsp;        if(universityid!=null){</b>
+<b class="nc">&nbsp;            predicates.add(cb.equal(root.get(&quot;university&quot;).get(&quot;id&quot;),universityid));</b>
+&nbsp;        }
+<b class="nc">&nbsp;        Predicate array =cb.and(predicates.toArray(new Predicate[0]));</b>
+<b class="nc">&nbsp;         cq.where(array);</b>
+<b class="nc">&nbsp;       cq.select(root);</b>
+<b class="nc">&nbsp;        TypedQuery&lt;Student&gt; query = em.createQuery(cq);</b>
+<b class="nc">&nbsp;        List&lt;Student&gt; resultList = query.getResultList();</b>
+<b class="nc">&nbsp;        return resultList;</b>
+&nbsp;    }
+&nbsp;    public List&lt;Student&gt;findentity(){
+<b class="nc">&nbsp;        CriteriaBuilder cb = em.getCriteriaBuilder();</b>
+<b class="nc">&nbsp;        CriteriaQuery&lt;Student&gt; cq = cb.createQuery(Student.class);</b>
+<b class="nc">&nbsp;        Root&lt;Student&gt; root = cq.from(Student.class);</b>
+<b class="nc">&nbsp;        cq.select(root).where(cb.gt(root.get(&quot;age&quot;),23));</b>
+<b class="nc">&nbsp;        return em.createQuery(cq).getResultList();  // yasi 23den boyuk olan studentler</b>
+&nbsp;    }
+&nbsp;    public List&lt;Student&gt;findbyemailandpassword(String email,String password){
+<b class="nc">&nbsp;        CriteriaBuilder cb = em.getCriteriaBuilder();</b>
+<b class="nc">&nbsp;        CriteriaQuery&lt;Student&gt; cq = cb.createQuery(Student.class);</b>
+<b class="nc">&nbsp;        Root&lt;Student&gt; root = cq.from(Student.class);</b>
+<b class="nc">&nbsp;        List&lt;Predicate&gt;predicates=new ArrayList&lt;&gt;();</b>
+<b class="nc">&nbsp;        predicates.add(cb.like(root.get(&quot;email&quot;),&quot;%&quot;+email+&quot;%&quot;));</b>
+<b class="nc">&nbsp;        predicates.add(cb.like(root.get(&quot;password&quot;),&quot;%&quot;+password+&quot;%&quot;));</b>
+<b class="nc">&nbsp;        cq.where(predicates.toArray(new Predicate[0]));</b>
+<b class="nc">&nbsp;        cq.select(root).where(cb.equal(root.get(&quot;password&quot;),password));</b>
+<b class="nc">&nbsp;        TypedQuery&lt;Student&gt; query = em.createQuery(cq);</b>
+<b class="nc">&nbsp;        List&lt;Student&gt; resultList = query.getResultList();</b>
+&nbsp;
+<b class="nc">&nbsp;        return resultList;</b>
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-10-20 18:32</div>
+</div>
+</body>
+</html>

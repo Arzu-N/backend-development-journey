@@ -1,0 +1,15 @@
+package com.example.demo.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.http.HttpStatus;
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+public class ExceptionResponseDto {
+    HttpStatus status;
+    String message;
+}

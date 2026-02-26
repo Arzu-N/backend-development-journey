@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Student list</title>
+</head>
+<body>
+<h1>Student list</h1>
+<table border="1">
+    <thead>
+    <tr>
+
+        <td>id</td>
+        <td>name</td>
+        <td>surname</td>
+        <td>age</td>
+        <td>email</td>
+        <td>university</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="s:${students}">
+        <td th:text="${s.id}"></td>
+        <td th:text="${s.name}"></td>
+        <td th:text="${s.surname}"></td>
+        <td th:text="${s.age}"></td>
+        <td th:text="${s.email}"></td>
+        <td th:text="${s.university.name}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
